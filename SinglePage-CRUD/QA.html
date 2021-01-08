@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+   
+   
+</style>
+<body>
+    
+<form>
+
+    In which category you want to enter new Q?<br>
+
+    <select name="category" id="category">
+        <option value="">Select Option</option>
+        <option value="data">data</option>
+        <option value="lit">lit</option>
+    </select><br><br>
+
+     Question:
+    <input type="text" id="que" name="fname" required><br><br>
+ 
+    Option 1:
+    <input type="text" id="option1" name="lname" required><br><br>
+    Option 2:
+    <input type="text" id="option2" name="lname" required><br><br>
+    Option 3:
+    <input type="text" id="option3" name="lname" required><br><br>
+    Option 4:
+    <input type="text" id="option4" name="lname" required><br><br>
+
+    Answer (insert text of the option) <br>
+    <input type="text" id="answer" name="lname" required><br><br>
+
+    <input type="submit" id="submit" value="Submit">
+   <!--  <input type="submit" id="update" value="Update"> -->
+
+  
+</form> 
+
+<br><br><br>
+
+<!-- 
+<button id="display-data">DATA Cat</button>
+<button id="display-lit">Literature Cat</button> -->
+
+
+DATA QUESTIONS
+<table border="2" class="display">
+    <thead>
+        <td>Id</td>
+        <td>question</td>
+        <td>option 1</td>
+        <td>option 2</td>
+        <td>option 3</td>
+        <td>option 4</td>
+        <td>answer</td>
+        <td>Operations</td>
+    </thead>
+
+     <tbody id="tableData">
+
+    </tbody>
+</table>
+
+<br><br><br>
+
+Literature  QUESTIONS
+<table border="2">
+    <thead>
+        <td>Id</td>
+        <td>question</td>
+        <td>option 1</td>
+        <td>option 2</td>
+        <td>option 3</td>
+        <td>option 4</td>
+        <td>answer</td>
+        <td>Operations</td>
+    </thead>
+
+     <tbody id="tableLit">
+
+    </tbody>
+</table>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script src="QA.js"></script>
+</body>
+</html>

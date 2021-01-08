@@ -1,0 +1,51 @@
+{
+  "data": [
+    {
+      "question": "question1",
+      "answer": "1",
+      "option1": "1asdasdasd",
+      "option2": "2sss",
+      "option3": "3",
+      "option4": "4",
+      "id": 4
+    },
+    {
+      "question": "erferfg",
+      "answer": "q1",
+      "option1": "q1",
+      "option2": "q1",
+      "option3": "q1",
+      "option4": "q1",
+      "id": 5
+    }
+  ],
+  "lit": [
+    {
+      "question": "erferfg",
+      "answer": "asdad",
+      "option1": "asdad",
+      "option2": "asdad",
+      "option3": "asdad",
+      "option4": "asdad",
+      "id": 3
+    },
+    {
+      "question": "sdfsf",
+      "answer": "q1",
+      "option1": "asdad",
+      "option2": "q1",
+      "option3": "q1",
+      "option4": "q1",
+      "id": 4
+    },
+    {
+      "question": "fgfgh",
+      "answer": "venktesh",
+      "option1": "hii",
+      "option2": "hello",
+      "option3": "venktesh",
+      "option4": "urvashi",
+      "id": 5
+    }
+  ]
+}
