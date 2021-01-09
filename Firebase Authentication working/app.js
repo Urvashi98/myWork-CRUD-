@@ -1,33 +1,31 @@
-// onstate
-firebase.auth().onAuthStateChanged(function(user) {
-    console.log("USer:",user);
-    if (user) {
-    var userId = firebase.auth().currentUser.uid;     // User is signed in.
-    console.log("UserId",userId);
-        if(userId != null){
-        // console.log(userId);
+let displayForm=document.getElementById("disp");
+let showData=document.getElementById("showDataonce");
 
-        // firebase.database().ref('Users/'+ userId).once('value').then(function(snapshot) {  
-        //     if(snapshot.val()){
-        //         console.log("In snapshot"); 
-        //         window.location.href = "updateForm.html"
-        //     }
-        //     else{
-        //         console.log("In once again else");
-        //     }
-        // })
-        alert("Welcome:"+user.email);
-        window.location.href = "updateForm.html"
-    }   
-} else {
-    // No user is signed in
-    console.log("In else");
+
+window.addEventListener("load", logoutData);
+
+// onstate
+
+function logoutData (){
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) { 
+
+                console.log(user);
+                console.log("In Auth");
+                displayForm.style.display="none";
+                showData.style.display="block";
+                document.getElementById("name").innerHTML = user.email;
+                // window.location="home.html";
+    } else {
+        // No user is signed in
+        console.log("In else of Auth");
+    }
+    });    
 }
-}); 
 
 // signup
 function signUp(){
-    
+    console.log("In signup");
     email = document.getElementById("email").value;
     password = document.getElementById("pwd").value;
     confirmPassword = document.getElementById("cnfpwd").value;
@@ -43,6 +41,9 @@ function signUp(){
                 .catch((error) => {
                     var errorCode = error.code;
                     var errorMessage = error.message;
+
+                    console.log("ErrorMessage:",errorMessage);
+                    document.getElementById("span").innerHTML = errorMessage
                     // ..
             });
         }
@@ -56,17 +57,31 @@ function login(){
     getemail = document.getElementById("email").value;
     getPwd = document.getElementById("pwd").value;
 
-        firebase.auth().signInWithEmailAndPassword(getemail, getPwd)
-            .then((user) => {
-                    console.log(user);
-                })
-                .catch((error) => {
-                    console.log("In ELSE:")
-                var errorCode = error.code;
-                console.log(errorCode);
+    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION).then(() => {
+        // firebase.auth().signInWithEmailAndPassword(getemail, getPwd)
+            // .then((user) => {
+            //         console.log(user);
+            //     })
+            //     .catch((error) => {
+            //         console.log("In ELSE:")
+            //     var errorCode = error.code;
+            //     console.log(errorCode);
+            //     var errorMessage = error.message;
+            //     window.location.href = "test.html";
+            // });
+
+                // Existing and future Auth states are now persisted in the current
+                // session only. Closing the window would clear any existing state even
+                // if a user forgets to sign out.
+                // ...
+                // New sign-in will be persisted with session persistence.
+                return firebase.auth().signInWithEmailAndPassword(getemail, getPwd);
+              })
+              .catch((error) => {
+                // Handle Errors here.
+                var errorCode = error.code; 
                 var errorMessage = error.message;
-                window.location.href = "test.html";
-            });
+              });
             document.getElementById("myForm").reset();
 }
 
@@ -79,6 +94,9 @@ function logout(){
         // An error happened.
       });
 }
+
+
+
 
 function update(){
     fname = document.getElementById("fname").value;

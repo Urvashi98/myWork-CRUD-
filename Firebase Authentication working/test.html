@@ -7,19 +7,28 @@
     <title>Document</title>
 </head>
 <body>
-    <form id="myForm">
-        Email:
-        <input type="email" name="" id="email"><br><br>
-        Password:
-        <input type="password" name="" id="pwd"><br><br>    
-        Confim Password:
-        <input type="password" name="" id="cnfpwd">
-    </form>
+    <div class="displayForm" id="disp">
+        <form id="myForm" >
+            Email:
+            <input type="email" name="" id="email"><span id="span"></span><br><br>
+            Password:
+            <input type="password" name="" id="pwd"><br><br>    
+            Confim Password:
+            <input type="password" name="" id="cnfpwd"><br><br>
+            <a href="forget.html">Forget</a>
+        </form>
+    </div>
 
     <button onclick="signUp()">SignUp</button><br><br>
     <button onclick="login()" id="login">Login</button>   <br><br> <!-- login -->
-    <button onclick="logout()">Logout</button>
 
+    <div class="showData" style="display:none" id="showDataonce">
+        <h1>Welocme User</h1>
+        <h3 id="name"></h3>
+        <button onclick="logout()" id="logoutData">Logout</button>
+    </div>
+
+   
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
@@ -27,7 +36,7 @@
 
     <script src="firebase.js"></script>
     <script src="app.js"></script>
- 
+    
     
 </body>
 </html>
