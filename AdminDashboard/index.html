@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>LOGIN</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+      .style{
+        margin-left:5ex; margin-right:5ex;
+      }
+    </style>
+  </head>
+  <body>
+
+  <div class="container">
+    <div class="row justify-content-center" style="margin-top:10em;">
+    
+
+        <div class="col-md-6 text-center">
+            <div class="jumbotron jumbotron-fluid">
+                       
+                                        <h2>Admin Login</h2>
+                             <p>Please fill this form to login.</p>
+       
+
+                <!--Registration Form -->
+
+                        <form id="loginForm" method="POST">
+                        
+                        <div class="form-group w-60 style" >
+                            <input type="text" name="username" class="form-control" id="email" placeholder="Enter Full Name"  />
+                    
+                        </div> 
+
+                        <div class="form-group w-60 style">
+                            <input type="password" name="password" class="form-control" id="password" placeholder="Enter Password" required/> 
+                           
+                        </div> 
+
+                        <div class="form-group">
+                                <input type="submit" class="btn btn-primary" value="Login" id="login" name="login">
+                                <input type="reset" class="btn btn-primary" value="Reset">
+                        </div>
+                        </form>
+                        </div>
+      </div>
+  </div>
+</div>
+
+ <!-- scripts -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+ 
+ <!-- custom js -->
+<script src="js/auth.js"></script>
+
+  </body>
+</html>
