@@ -42,7 +42,7 @@ footer{
     bottom: 0;
     width: 100%;
     height: 70px;
-    background-color: rgb(238, 227, 238);
+    background-color:#dfdee3;
     color: black;
     text-align: center;
 }
@@ -58,6 +58,22 @@ footer{
 .dropdown-showhide{
     display: none;
 }
+.card{
+    background-color:#e1dcf7;
+    margin: 20px;
+   
+ }
+.card-title{
+
+    font-weight: 30px;
+    font-size: 24px;
+}
+.card:hover{
+    box-shadow: 14px 24px 48px 5px #43474b;
+}
+/* .card-text{
+    color: white;
+} */
 
 
 @media screen and (min-width:360px) and (max-width:579px){
@@ -76,5 +92,8 @@ footer{
 
     .res-jumbotron{
         width: 100%;
+    }
+    .card{
+       margin: 20px;
     }
 }
