@@ -5,11 +5,16 @@ let DATA_URL = "http://localhost:3000/";
 
 $(document).ready(function () {
    
-    var categories =["html","js"];
+    //check if admin is logged in or not
+    var status = localStorage.getItem("loggedIn"); 
+  
+    if(status == 'true'){       // check if user access pages after logging in
 
-    /* fetch data  */
+        var categories =["html","js"];
 
-    $.each(categories, function (key, value) { 
+    /* fetch data on page load  */
+
+     $.each(categories, function (key, value) { 
             
              var url = DATA_URL + value;
 
@@ -50,11 +55,11 @@ $(document).ready(function () {
 
     /* POST data */
 
-    $('#submit').on('click', function () {
+    $('.form').on("click","#submit",null,function(){
            
         /* fetch user values */
-     
-        var cat = $('#category :selected').attr('value');
+        console.log("in submit");
+        var cat = $('#category :selected').attr('value'); //fetch user values
         var question = $('#question').val();
         var answer =  $('#answer').val();
         var option1 = $('#option1').val();
@@ -78,10 +83,9 @@ $(document).ready(function () {
         /* submit form */
 function submitForm(cat,data) {
 
-   // console.log(cat,data);
-
+  
     var url = DATA_URL + cat;
-
+ 
      /* post */
         if(flag == 0) {
 
@@ -96,8 +100,9 @@ function submitForm(cat,data) {
         }
         /* update */
         else{
-
-           var url_update = url +'/'+id_temp;
+           
+           var url_update = url+'/'+id_temp;
+           console.log(url_update);
            updateQuestion(url_update , data);
            flag= 0;
 
@@ -124,15 +129,14 @@ function submitForm(cat,data) {
     function populateFormData(id,cat){
 
         var url = DATA_URL+cat+'/'+id;
-
+        console.log(url);
            $(".form").find("#submit").text('Save').addClass(".btn-color-chnage");
 
            $.get(url,function (data, textStatus, jqXHR) {
 
                 //    console.log(data);
-              //   $('#category').val(cat);
-
-                $('#question').val(data.question);
+                 $('#category').val(cat);
+                 $('#question').val(data.question);
                  $('#option1').val(data.option1);
                  $('#option2').val(data.option2);
                  $('#option3').val(data.option3);
@@ -182,6 +186,10 @@ function submitForm(cat,data) {
 
    function deleteData(id,cat) {
 
+    var status = confirm("Are you sure you want to delete question?");
+
+    if(status != null) {
+        
         $.ajax(
             {
                type:'DELETE',
@@ -196,7 +204,17 @@ function submitForm(cat,data) {
                }
             }
           );
+      }
+       
+     }
+
+    }
+        
+    else{
+        window.location.href="index.html";
+     //   alert('please login first');
+       
     }
 
-
+    
 });
